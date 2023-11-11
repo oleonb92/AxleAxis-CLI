@@ -1,6 +1,0 @@
-{
-    // ... any existing workspace settings ...
-    "terminal.integrated.defaultProfile.osx": "zsh",
-    "python.terminal.activateEnvironment": true
-    // ... any other settings you may have ...
-}
