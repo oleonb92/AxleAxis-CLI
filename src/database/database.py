@@ -1,3 +1,6 @@
+# TESTED AND WORKING FINE!
+
+
 import psycopg2
 from psycopg2 import OperationalError
 
@@ -284,6 +287,17 @@ def delete_vehicle(conn, vin):
     except psycopg2.errors.DatabaseError as e:
         print(f"Database error: {e}")
         conn.rollback()
+
+def get_all_vehicles(conn):
+    """Retrieve all vehicles from the database."""
+    try:
+        with conn.cursor() as cursor:
+            cursor.execute("SELECT * FROM vehicles")
+            return cursor.fetchall()
+    except psycopg2.errors.DatabaseError as e:
+        print(f"Database error: {e}")
+        return []
+
 
 
 
